@@ -41,4 +41,4 @@ function 함수2(x? : number) : void {
     console.log(x);
 }
 함수2()
-// 변수? : number 는 변수 : number | undefined 와 같다
+// 변수? : number 는 변수 : number | undefined 와 같다.
