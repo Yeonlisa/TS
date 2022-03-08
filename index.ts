@@ -24,3 +24,21 @@ let 연세 : string | number;
 // string 타입 + 1 (허용)
 // number 타입 + 1 (허용)
 // string | number + 1 (불가)
+
+// 함수타입지정법
+function 함수(x : number) : number {
+    return x * 2;
+}
+
+// void 타입(return 방지)
+function 함수1(x : number) : void {
+    console.log(x);
+}
+함수1(3)
+
+// 옵션파라미터
+function 함수2(x? : number) : void {
+    console.log(x);
+}
+함수2()
+// 변수? : number 는 변수 : number | undefined 와 같다
