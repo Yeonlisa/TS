@@ -42,3 +42,32 @@ function 함수2(x? : number) : void {
 }
 함수2()
 // 변수? : number 는 변수 : number | undefined 와 같다.
+
+// Type Narrowing(Type이 아직 하나로 확정되지 않았을 경우)
+// 대표적인 Narrowing 방법 : typeof 연산자
+// 어떤 변수가 타입이 아직 불확실하면 if문 등으로 Narrowing 해줘야 조작가능
+function 내함수(x : number | string) {
+    if(typeof x === 'string') {
+        return x + '1'
+    } else {
+        return x + 1
+    }
+}
+
+내함수(123);
+
+// Narrowing으로 판정해주는 문법들
+// typeof 변수
+// 속성명 in 오브젝트자료
+// 인스턴스 instanceof 부모
+
+// assertion 문법 : 타입 덮어쓰기(if문 필요없다)
+// assertion 문법의 용도
+// 1. Narrowing 할 때 쓴다.
+// 2. 무슨 타입이 들어올지 100% 확실할 때 쓴다.
+function 내함수2(x : number | string) {
+    let array : number[] = [];
+    array[0] = x as number;
+}
+
+내함수2(123);
