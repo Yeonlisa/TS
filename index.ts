@@ -71,3 +71,32 @@ function 내함수2(x : number | string) {
 }
 
 내함수2(123);
+
+// type Alias(타입변수)
+type Animal = { name : string, age: number }
+let 동물 : Animal = { name: 'kim', age: 20 }
+
+// const 변수는 등호로 재할당만 막고 object 수정은 자유롭게 가능하다
+// readonly 쓰면 object 자료 수정도 막을 수 있다.
+// object 속성 안에도 ? 사용 가능하다.
+type Girlfriend = {
+    readonly name: string
+}
+
+const 여친 : Girlfriend = {
+    name: '엠버'
+}
+
+// type alias extend(union type으로 합치기 가능하다)
+type Name = string;
+type Age = number;
+type Person = Name | Age;
+// & 연산자로 object 타입을 합칠 수 있다.
+type PositionX = { x : number };
+type PositionY = { y : number };
+
+type NewType = PositionX & PositionY
+
+let position : NewType = { x : 10, y : 20 }
+
+// 같은 이름의 type 변수 재정의 불가
