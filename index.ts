@@ -100,3 +100,27 @@ type NewType = PositionX & PositionY
 let position : NewType = { x : 10, y : 20 }
 
 // 같은 이름의 type 변수 재정의 불가
+
+// literal type : 특정 글자나 숫자만 가질 수 있게 제한을 두는 타입
+// 장점 : 변수에 뭐가 들어올지 더 엄격하게 관리가능하고 자동완성 힌트
+let 접니다 : '대머리' | '솔로';
+
+function 함수3 (a : '가위' | '바위' | '보') : ('가위' | '바위' | '보')[]{
+    return ['가위']
+}
+
+var 자료 = {
+    name : 'kim'
+} as const
+
+function 내함수3(a : 'kim') {
+
+}
+
+내함수3(자료.name)
+
+// as const : object는 literal type 지정을 알아서 해준다.
+// 장점
+// 1. object value 값을 그대로 타입으로 지정해준다.
+// 2. object 속성들에 모두 readonly 붙여준다.
+// object 자료를 완전히 잠구고 싶으면 as const를 쓴다.
