@@ -124,3 +124,27 @@ function 내함수3(a : 'kim') {
 // 1. object value 값을 그대로 타입으로 지정해준다.
 // 2. object 속성들에 모두 readonly 붙여준다.
 // object 자료를 완전히 잠구고 싶으면 as const를 쓴다.
+
+// type alias에 함수 type 저장해서 쓰는 법
+// 1. 함수타입은 () => {} 모양으로
+// 2. 함수표현식에만 type alias 사용가능
+
+type 함수타입 = (a : string) => number;
+
+let 함수4 : 함수타입 = function (a) {
+    return 10
+}
+
+// object 안에 함수만들 수 있다.
+type Member = {
+    name : string,
+    plusOne : (a : number) => number,
+    changeName : () => void
+}
+let 회원정보: Member = {
+    name : 'kim',
+    plusOne(a) {
+        return a + 1
+    },
+    changeName : () => {}
+}
